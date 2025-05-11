@@ -1,0 +1,25 @@
+{% assign categories = site.data.tutorial_categories.embedded %}
+
+<aside class="sidebar">
+  <h2>Categories</h2>
+  <ul>
+    {% for cat in categories %}
+      <li><a href="#{{ cat.anchor }}">{{ cat.title }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>
+
+<main class="content">
+  {% for cat in categories %}
+    <section id="{{ cat.anchor }}">
+      <h2>{{ cat.title }}</h2>
+      <ul>
+        {% assign posts = site.embedded | where_exp: "post", "post.tags contains cat.anchor" %}
+        {% for post in posts %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</main>
+

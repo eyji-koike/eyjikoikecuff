@@ -1,0 +1,62 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Build Better Systems, From Bits to Cloud</h1>
+    <p>
+      I'm a <span id="typed" class="typed-highlight"></span>
+    </p>
+    <a class="cta-button" href="{{ '/consulting/' | relative_url }}">Work with Me</a>
+  </div>
+</section>
+
+
+<section class="highlights">
+  <div class="card fade-in-on-scroll">
+    <h2>Embedded Tutorials</h2>
+    <p>From blinking LEDs to FreeRTOS — hands-on guides for embedded engineers.</p>
+    <a href="{{ '/embedded/' | relative_url }}">Explore Embedded </a>
+  </div>
+
+  <div class="card fade-in-on-scroll">
+    <h2>Software Engineering</h2>
+    <p>Clean code, backend development, and real-world problem solving.</p>
+    <a href="{{ '/software/' | relative_url }}">Read SWE Posts </a>
+  </div>
+
+  <div class="card fade-in-on-scroll">
+    <h2>Travel & Lifestyle</h2>
+    <p>Balancing engineering with creativity, travel, and slow living.</p>
+    <a href="{{ '/lifestyle/' | relative_url }}">Discover More </a>
+  </div>
+
+  <div class="card fade-in-on-scroll">
+    <h2>Consulting</h2>
+    <p>Need an expert? I help teams design robust embedded solutions and scalable software.</p>
+    <a href="{{ '/consulting/' | relative_url }}">See My Services </a>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Typed("#typed", {
+      strings: [
+        "firmware engineer.",
+        "embedded systems developer.",
+        "fullstack software engineer.",
+        "technical writer.",
+        "traveler and explorer.",
+        "fitness avocate."
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true,
+      smartBackspace: true,
+      showCursor: true
+    });
+  });
+</script>

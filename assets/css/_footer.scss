@@ -1,0 +1,33 @@
+.site-footer {
+  background: #f1f5f9;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-top: 4rem;
+
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+}

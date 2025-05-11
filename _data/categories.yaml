@@ -1,0 +1,25 @@
+# _data/tutorial_categories.yml
+
+embedded:
+  - title: Getting Started
+    anchor: getting-started
+  - title: RTOS
+    anchor: rtos
+  - title: Drivers
+    anchor: drivers
+  - title: Debugging
+    anchor: debugging
+  - title: Hardware
+    anchor: hardware
+
+software:
+  - title: Architecture
+    anchor: architecture
+  - title: DevOps
+    anchor: devops
+  - title: Web Backends
+    anchor: web-backends
+  - title: Testing
+    anchor: testing
+  - title: Patterns
+    anchor: patterns
