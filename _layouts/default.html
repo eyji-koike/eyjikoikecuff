@@ -19,6 +19,16 @@
     cards.forEach(card => observer.observe(card));
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", function () {
+      navLinks.classList.toggle("open");
+    });
+  });
+</script>
 
 <body>
   {% include navbar.html %}
