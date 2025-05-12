@@ -8,7 +8,8 @@
   .navbar-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; // 🔥 this fixes vertical misalignment
+    flex-wrap: wrap;
     padding: 1rem 2rem;
   }
 
@@ -50,7 +51,8 @@
     background: none;
     border: none;
     cursor: pointer;
-
+    margin-left: auto;
+    
     @media (max-width: 768px) {
       display: block;
     }
