@@ -1,0 +1,74 @@
+.post-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+
+  .post-header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      color: #2a4365;
+    }
+
+    .post-meta {
+      font-size: 0.95rem;
+      color: #718096;
+
+      .tag {
+        color: $accent-color;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .post-content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+
+    h2, h3 {
+      margin-top: 2rem;
+      color: #2d3748;
+    }
+
+    code {
+      background: #f7fafc;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+    }
+  }
+
+  .post-footer {
+    margin-top: 2.5rem;
+
+    a {
+      color: $accent-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

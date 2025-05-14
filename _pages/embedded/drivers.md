@@ -1,8 +1,8 @@
 ---
 layout: category
-title: Getting started
-permalink: /embedded/getting-started/
-tag: getting-started
+title: RTOS Tutorials
+permalink: /embedded/drivers/
+tag: drivers
 collection: embedded
 ---
 <div class="tutorial-layout">

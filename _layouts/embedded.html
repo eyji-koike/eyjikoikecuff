@@ -1,25 +1,40 @@
-{% assign categories = site.data.tutorial_categories.embedded %}
+{% assign categories = site.data.categories.embedded %}
 
-<aside class="sidebar">
-  <h2>Categories</h2>
-  <ul>
-    {% for cat in categories %}
-      <li><a href="#{{ cat.anchor }}">{{ cat.title }}</a></li>
-    {% endfor %}
-  </ul>
-</aside>
+<button id="toggleSidebar" class="sidebar-toggle">☰ Show Categories</button>
+  <aside class="tutorial-sidebar" id="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      {% assign categories = site.data.categories.embedded %}
+      {% for cat in categories %}
+        <li>
+          <a href="{{ '/embedded/' | append: cat.anchor | append: '/' | relative_url }}">
+            {{ cat.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </aside>
 
 <main class="content">
   {% for cat in categories %}
-    <section id="{{ cat.anchor }}">
-      <h2>{{ cat.title }}</h2>
-      <ul>
-        {% assign posts = site.embedded | where_exp: "post", "post.tags contains cat.anchor" %}
-        {% for post in posts %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </section>
+    <section class="category-preview">
+  <h2>{{ cat.title }}</h2>
+
+  {% assign posts = site.embedded | where_exp: "p", "p.tags contains cat.anchor" | sort: "date" | reverse %}
+  {% assign latest = posts[0] %}
+
+  {% if latest %}
+    <div class="category-card">
+      <h3><a href="{{ latest.url }}">{{ latest.title }}</a></h3>
+      <p>{{ latest.excerpt }}</p>
+      <a class="see-all" href="{{ '/embedded/' | append: cat.anchor | append: '/' | relative_url }}">
+        See all {{ cat.title }} posts →
+      </a>
+    </div>
+  {% else %}
+    <p>No posts yet in this category.</p>
+  {% endif %}
+</section>
   {% endfor %}
 </main>
 

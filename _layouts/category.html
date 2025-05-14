@@ -1,16 +1,32 @@
 ---
 layout: default
 ---
+<button id="toggleSidebar" class="sidebar-toggle">☰ Show Categories</button>
+<div class="tutorial-layout">
+  <aside class="tutorial-sidebar" id="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      {% assign categories = site.data.categories.embedded %}
+      {% for cat in categories %}
+        <li>
+          <a href="{{ '/embedded/' | append: cat.anchor | append: '/' | relative_url }}">
+            {{ cat.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </aside>
 
-<div class="tutorial-category">
-  <h1>{{ page.title }}</h1>
-  <ul>
-    {% assign posts = site.embedded | where_exp: "p", "p.tags contains page.tag" %}
-    {% for post in posts %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <p>{{ post.excerpt }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+  <main class="tutorial-content">
+    <h1>{{ page.title }}</h1>
+    <ul>
+      {% assign posts = site.embedded | where_exp: "p", "p.tags contains page.tag" %}
+      {% for post in posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <p>{{ post.excerpt }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
 </div>
